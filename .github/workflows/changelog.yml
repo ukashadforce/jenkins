@@ -33,6 +33,7 @@ jobs:
         id: jenkins-core-changelog-generator
         uses: jenkinsci/jenkins-core-changelog-generator@master
         env:
+    if: github.repository_owner == 'jenkinsci'
           GITHUB_AUTH: github-actions:${{ secrets.GITHUB_TOKEN }}
       - name: Upload Changelog YAML
         uses: actions/upload-artifact@v4
